@@ -1,0 +1,31 @@
+Memory:
+
+	board	resb	.......... (WxH)
+
+	xpos	resd	1
+	ypos	resd	1
+
+Code:
+
+	1. Turn on raw mode
+
+	2. Read the board file into the board array
+
+	3. Set xpos/ypos to start values
+
+	4. Loop {
+		a. Render the current board
+		b. Get a character from the user
+		c. Save the current xpos/ypos
+		d. Check to see if the user enderd 'x'
+			- if so, exit the loop
+		e. Alter xpos/ypos according to the user's input
+		f. Check to see if the xpos/ypos is now on top of a wall
+			- if so, restore the old, saved xpos/ypos
+	}
+
+	5. Turn off raw mode
+
+	6. Done!  Exit the program
+
+
